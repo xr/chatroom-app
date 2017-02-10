@@ -1,0 +1,45 @@
+{
+  "name": "Chatapp",
+  "version": "0.0.1",
+  "description": "chat app frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/karma start"
+  },
+  "author": "liang",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "angular-mocks": "^1.5.8",
+    "babel-preset-es2015": "^6.14.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.14.3",
+    "browserify": "^13.1.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-shell": "^0.5.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "jasmine-core": "^2.5.0",
+    "jshint": "^2.9.3",
+    "karma": "^1.2.0",
+    "karma-browserify": "^5.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.0.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-marked": "^1.2.2",
+    "angular-cookies": "^1.5.8",
+    "angular-moment": "^1.0.0-beta.6",
+    "angular-ui-router": "^0.3.1",
+    "moment": "^2.14.1"
+  }
+}
