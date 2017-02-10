@@ -1,0 +1,46 @@
+/**
+ *
+ * Global
+ *
+ */
+$font-family: 'latoregular', 'Helvetica Neue', sans-serif;
+
+$white: rgba(255, 255, 255, .9);
+$green: #3CAF36;
+$white-half: rgba(255, 255, 255, .5);
+$border-color: #24272c;
+$border-color-light: #d6d6d6;
+
+
+/**
+ *
+ * Panel part
+ *
+ */
+
+$panel-bg: #2e3238;
+$panel-width: 280px;
+$info-width: 156px;
+$panel-search-bg: #26292e;
+
+$icon-custom-size: 22px;
+$panel-search-height: 30px;
+$avatar-size: 40px;
+
+/**
+ *
+ * Chat part
+ *
+ */
+$chat-bg: #eee;
+$chat-item-active-bg: #3a3f45;
+$message-time-bg: #dcdcdc;
+$message-author: #4f4f4f;
+$bubble-me-bg: #b2e281;
+
+$chat-title-height: 50px;
+$chat-bottom-height: 150px;
+
+
+$breakpoint: 620px;
+$gap: 20px;

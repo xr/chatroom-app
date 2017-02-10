@@ -1,0 +1,47 @@
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.clearfix {
+    &:before,
+    &:after {
+    	content: "";
+    	display: table;
+    }
+
+    &:after {
+    	clear: both;
+   	}
+}
+
+hr {
+    width: 100%;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $border-color;
+}
+
+.label-alert {
+    border-radius: 100%;
+    text-align: center;
+    display: inline-block;
+    font-weight: 200;
+    font-size: 12px;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+}
+
+.dot-green {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: $green;
+}

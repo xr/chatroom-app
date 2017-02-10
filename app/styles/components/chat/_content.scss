@@ -1,0 +1,77 @@
+@mixin content() {
+	position: absolute;
+	top: $chat-title-height;
+	bottom: $chat-bottom-height;
+	padding: $gap;
+	box-sizing: border-box;
+	width: 100%;
+	overflow-y: scroll;
+	.message {
+		width: 100%;
+		margin-bottom: $gap;
+		.time {
+			margin: 0 auto;
+			margin-bottom: $gap;
+			text-align: center;
+			span {
+				padding: 5px $gap;
+				color: white;
+				background: $message-time-bg;
+				font-size: 12px;
+			}
+		}
+		.avatar {
+			width: $avatar-size;
+			height: $avatar-size;
+			float: left;
+		}
+		.nickname {
+			font-size: 12px;
+			color: $message-author;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			word-wrap: normal;
+			padding: 0 $gap - 10;
+			height: 22px;
+		}
+		.bubble {
+			background: white;
+			max-width: 80%;
+			min-height: 1em;
+			position: relative;
+			margin: 0 $gap - 10;
+			display: inline-block;
+			.plain {
+				padding: $gap - 10 $gap - 5;
+			}
+			&.default::before {
+				content:"\A";
+				border-style: solid;
+				border-width: 8px 5px 8px 0;
+				border-color: transparent white transparent transparent;
+				position: absolute;
+				top: 10px;
+				left: -5px;
+			}
+		}
+		&.me {
+			.avatar {
+				float: right;
+			}
+			.bubble {
+				float: right;
+				background: $bubble-me-bg;
+				&::after {
+					content:"\A";
+					border-style: solid;
+					border-width: 8px 0 8px 5px;
+					border-color: transparent transparent transparent $bubble-me-bg;
+					position: absolute;
+					top: 10px;
+					right: -5px;
+				}
+			}
+		}
+	}
+}

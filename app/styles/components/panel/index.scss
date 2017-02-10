@@ -1,0 +1,39 @@
+@import './header';
+@import './search-bar';
+@import './tab';
+@import './list';
+
+.panel {
+	position: absolute;
+	width: $panel-width;
+	background: $panel-bg;
+	height: 100%;
+	-moz-transition: all 500ms ease;
+    transition: all 500ms ease;
+    transform: translateX(0);
+	&.hide {
+		transform: translateX(- $panel-width);
+	}
+	.upper-wrapper {
+		position: fixed;
+		width: $panel-width;
+		.header {
+			@include header();
+		}
+		.search-bar {
+			@include searchBar();
+		}
+		.tab {
+			@include tab();
+		}
+	}
+
+	.list {
+		@include list();
+	}
+}
+
+
+@media only screen and (max-width : $breakpoint) {
+	@import './responsive';
+}

@@ -1,0 +1,22 @@
+@mixin tab() {
+	padding: $gap - 10;
+	padding-top: 0;
+	.item {
+		width: 33.33333%;
+		text-align: center;
+		box-sizing: border-box;
+		color: $white;
+		i {
+			font-size: $icon-custom-size;
+		}
+		&:first-of-type {
+			border-right: 1px solid $border-color;
+		}
+		&:last-of-type {
+			border-left: 1px solid $border-color;
+		}
+		&.active {
+			color: $green;
+		}
+	}
+}

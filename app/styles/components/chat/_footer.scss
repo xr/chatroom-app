@@ -1,0 +1,33 @@
+@mixin footer() {
+	position: absolute;
+	width: 100%;
+	height: $chat-bottom-height;
+	bottom: 0;
+	right: 0;
+	border-top: 1px solid $border-color-light;
+	.toolbar {
+		height: 30px;
+		padding: $gap - 15 $gap;
+		a {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			color: grey;
+			font-weight: 100;
+		}
+	}
+	.editor-wrapper {
+		padding: $gap - 15 $gap;
+		.editarea {
+			height: 6em;
+			overflow-y: scroll;
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+	[contenteditable=true]:empty:not(:focus):before{
+		color: gray;
+        content:attr(placeholder);
+    }
+}

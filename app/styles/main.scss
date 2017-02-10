@@ -1,1 +1,40 @@
-@import './test.scss'
+@import './core/variables';
+@import './utils/index';
+@import './components/panel/index';
+@import './components/chat/index';
+
+@font-face {
+    font-family: 'latoregular';
+    src: url('../fonts/lato-regular-webfont.woff2') format('woff2'),
+         url('../fonts/lato-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: $font-family;
+	font-size: 14px;
+}
+
+h1 {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: 200;
+}
+
+main {
+	width: 100%;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+}

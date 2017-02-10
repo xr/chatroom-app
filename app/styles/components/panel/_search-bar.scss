@@ -1,0 +1,24 @@
+@mixin searchBar() {
+	padding: $gap - 10 $gap;
+	position: relative;
+	i {
+		position: absolute;
+		z-index: 100;
+		text-align: center;
+		width: $panel-search-height;
+		height: $panel-search-height;
+		line-height: $panel-search-height;
+		color: $white-half;
+		background: $panel-search-bg;
+	}
+	input {
+		text-indent: $gap + 10;
+		width: 100%;
+		height: $panel-search-height;
+		line-height: $panel-search-height;
+		background: $panel-search-bg;
+		outline: none;
+		border: 0;
+		color: $white;
+	}
+}

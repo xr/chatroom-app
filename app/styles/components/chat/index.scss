@@ -1,0 +1,28 @@
+@import './header';
+@import './content';
+@import './footer';
+
+.chat {
+	position: absolute;
+	background: $chat-bg;
+	left: $panel-width;
+	-moz-transition: all 500ms ease;
+    transition: all 500ms ease;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	.header {
+		@include header();
+	}
+	.content {
+		@include content();
+	}
+	.footer {
+		@include footer();	
+	}
+}
+
+
+@media only screen and (max-width : $breakpoint) {
+	@import './responsive';
+}

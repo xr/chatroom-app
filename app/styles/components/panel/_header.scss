@@ -1,0 +1,42 @@
+@mixin header() {
+	padding: $gap;
+	padding-bottom: 0;
+	.avatar {
+		display: table-cell;
+		vertical-align: middle;
+		word-wrap: break-word;
+		word-break: break-all;
+		white-space: nowrap;
+		padding-right: $gap - 10;
+		img {
+			width: $avatar-size;
+			height: $avatar-size;
+			cursor: pointer;
+		}
+	}
+	.info {
+		display: table-cell;
+		vertical-align: middle;
+		word-wrap: break-word;
+		word-break: break-all;
+		.nickname {
+			display: inline-block;
+			color: $white;
+			overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    word-wrap: normal;
+		    width: $info-width;
+		    line-height: $avatar-size;
+		}
+	}
+	.opts {
+		display: table-cell;
+		vertical-align: middle;
+		color: $white-half;
+		i {
+			line-height: $avatar-size;
+			font-size: $icon-custom-size;
+		}
+	}
+}

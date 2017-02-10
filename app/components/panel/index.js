@@ -1,5 +1,5 @@
 const panel = {
-  templateUrl: '/assets/tpls/panel/panel.html',
+  templateUrl: '/assets/tpls/panel/index.html',
   controller: 'panelCtrl'
 };
 

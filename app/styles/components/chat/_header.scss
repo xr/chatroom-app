@@ -1,0 +1,10 @@
+@mixin header() {
+	position: fixed;
+	width: 100%;
+	height: $chat-title-height;
+	border-bottom: 1px solid $border-color-light;
+	padding-left: $gap;
+	h1 {
+		line-height: $chat-title-height;
+	}
+}

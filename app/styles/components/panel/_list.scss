@@ -1,0 +1,43 @@
+@mixin list() {
+	position: absolute;
+	top: 155px;
+	bottom: 0;
+	width: $panel-width;
+	overflow-y: scroll;
+	.item {
+		padding: $gap - 10 $gap;
+		position: relative;
+		border-bottom: 1px solid $border-color;
+		.online {
+			position: absolute;
+			top: $gap - 10 - 5;
+			left: $gap - 10 + $avatar-size + 5;
+		}
+		.avatar {
+			width: $avatar-size;
+			height: $avatar-size;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.name {
+			display: inline-block;
+			color: $white;
+			width: $info-width;
+			overflow: hidden;
+			font-weight: 200;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			word-wrap: normal;
+			line-height: $avatar-size;
+			margin-left: $gap - 10;
+		}
+		.label-alert {
+			top: $gap - 5;
+		    right: $gap - 10;
+		    position: absolute;
+		}
+		&.active {
+			background: $chat-item-active-bg;
+		}
+	}
+}
