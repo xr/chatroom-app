@@ -11,13 +11,10 @@ import onRun from './core/onRun';
 
 import services from './core/serviceMap';
 import components from './core/componentMap';
+import filters from './core/filterMap';
 import controllers from './core/controllerMap';
 
-import 'moment/locale/fi';
-import 'moment/locale/ru';
-import 'moment/locale/sv';
-import 'moment/locale/tr';
-
+import 'moment/locale/en-gb';
 const requires = [
 	'ui.router',
 	'angularMoment',
@@ -27,6 +24,7 @@ const requires = [
 const ingredients = {
 	service: services,
 	component: components,
+	filter: filters,
 	controller: controllers
 };
 

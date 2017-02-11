@@ -13,6 +13,10 @@ const panelCtrl = ['Room', 'User', 'Utils', function (Room, User, Utils) {
 		this[`fetch${this.tab}`]();
 	};
 
+	this.select = (roomId) => {
+		this.onSelect({ roomId: roomId });
+	};
+
 	this.change = (name) => {
 		this.tab = name;
 		this.loading = true;

@@ -1,27 +1,27 @@
-<div class="message">
-	<div class="time">
-		<span>5 mins ago</span>
+<div class="message" ng-if="$ctrl.message.from._id !== $root.user._id">
+	<div class="time" ng-if="$ctrl.pre.from._id !== $ctrl.message.from._id">
+		<span am-time-ago="$ctrl.message.created"></span>
 	</div>
-	<img class="avatar" src="https://api.adorable.io/avatars/40/random%40random.com" alt="">
+	<img class="avatar" ng-src="{{$ctrl.message.from.fbid | avatar}}" alt="">
 	<div class="text">
-		<p class="nickname">Liang Guo</p>
+		<p class="nickname">{{$ctrl.message.from.name}}</p>
 		<div class="bubble default">
 			<div class="plain">
-				hello, everyone, nice to see you! blabla, whatever...
+				{{$ctrl.message.content}}
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="message clearfix me">
-	<div class="time">
-		<span>5 mins ago</span>
+<div class="message clearfix me" ng-if="$ctrl.message.from._id === $root.user._id">
+	<div class="time" ng-if="$ctrl.pre.from._id !== $ctrl.message.from._id">
+		<span am-time-ago="$ctrl.message.created"></span>
 	</div>
-	<img class="avatar" src="https://api.adorable.io/avatars/40/hahah%40haha.com" alt="">
+	<img class="avatar" ng-src="{{$ctrl.message.from.fbid | avatar}}" alt="">
 	<div class="text">
 		<div class="bubble">
 			<div class="plain">
-				hohohohoho, yeah, welcome
+				{{$ctrl.message.content}}
 			</div>
 		</div>
 	</div>

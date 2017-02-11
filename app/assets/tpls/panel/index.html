@@ -7,6 +7,7 @@
 	<hr>
 	<div class="list scrollbar-light">
 		<spinner ng-if="$ctrl.loading"></spinner>
-		<panel-list-item ng-repeat="item in $ctrl.collections" item="item" tab="$ctrl.tab"></panel-list-item>
+		<!-- TODO: need to except the users case -->
+		<panel-list-item ng-repeat="item in $ctrl.collections" item="item" tab="$ctrl.tab" on-select="$ctrl.select(roomId)"></panel-list-item>
 	</div>
 </div>

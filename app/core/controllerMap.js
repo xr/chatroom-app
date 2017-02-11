@@ -3,11 +3,15 @@ import appCtrl from '../components/app/controller';
 import panelCtrl from '../components/panel/controller';
 import panelHeaderCtrl from '../components/panel/header/controller';
 
+import chatCtrl from '../components/chat/controller';
+
 const controllers = {
 	appCtrl: appCtrl,
 
 	panelCtrl: panelCtrl,
-	panelHeaderCtrl: panelHeaderCtrl
+	panelHeaderCtrl: panelHeaderCtrl,
+
+	chatCtrl: chatCtrl
 };
 
 export default controllers;

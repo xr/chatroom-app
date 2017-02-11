@@ -1,4 +1,4 @@
-<div class="item clearfix" ng-if="$ctrl.tab === 'Rooms' ">
+<div class="item clearfix" ng-if="$ctrl.tab === 'Rooms' " ng-click="$ctrl.onSelect({ roomId: $ctrl.item._id })">
 	<img class="avatar float-left" ng-src="{{$ctrl.item.logo}}">
 	<span class="name">{{$ctrl.item.title}}</span>
 	<span class="label-alert float-right">

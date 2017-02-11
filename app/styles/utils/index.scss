@@ -59,4 +59,7 @@ hr {
     width: 25px;
     margin: 0 auto;
     color: white;
+    .black {
+        color: $panel-bg;
+    }
 }
