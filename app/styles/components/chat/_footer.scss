@@ -30,4 +30,17 @@
 		color: gray;
         content:attr(placeholder);
     }
+    .facebook-login {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding: $gap - 10;
+		background: #3b5998;
+		color: white;
+		cursor: pointer;
+		span {
+			margin-left: $gap - 10;
+		}
+    }
 }

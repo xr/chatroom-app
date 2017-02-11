@@ -4,7 +4,9 @@ const onConfig = [
 	'$stateProvider',
 	'$urlRouterProvider',
 	'$locationProvider',
-	($stateProvider, $urlRouterProvider, $locationProvider) => {
+	'$httpProvider',
+	($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) => {
+		$httpProvider.defaults.withCredentials = true;
 		routes.forEach((route) => {
 			$stateProvider.state(route.name, route.opts);  
 		});

@@ -1,7 +1,7 @@
-import auth from '../services/auth';
+import User from '../services/user';
 
 const services = {
-	auth: auth
+	User: User
 };
 
 export default services;

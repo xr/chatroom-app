@@ -1,4 +1,9 @@
 <main>
-	<panel></panel>
-	<chat></chat>
+	<div class="loading" ng-if="$root.loading">
+		<i class="fa fa-5x fa-spin fa-spinner" aria-hidden="true"></i>
+	</div>
+	<div ng-if="!$root.loading">
+		<panel></panel>
+		<chat></chat>
+	</div>
 </main>
