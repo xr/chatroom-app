@@ -8,6 +8,8 @@ import chat from '../components/chat';
 import message from '../components/chat/message';
 import footer from '../components/chat/footer';
 
+import spinner from '../components/utils/spinner';
+
 const components = {
 	panel: panel,
 	panelHeader: panelHeader,
@@ -17,7 +19,9 @@ const components = {
 
 	chat: chat,
 	message: message,
-	footer: footer
+	footer: footer,
+
+	spinner: spinner
 };
 
 export default components;

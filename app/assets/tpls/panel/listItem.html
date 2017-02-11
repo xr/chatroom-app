@@ -1,4 +1,22 @@
-<div class="item clearfix">
+<div class="item clearfix" ng-if="$ctrl.tab === 'Rooms' ">
+	<img class="avatar float-left" ng-src="{{$ctrl.item.logo}}">
+	<span class="name">{{$ctrl.item.title}}</span>
+	<span class="label-alert float-right">
+		<i class="fa fa-users" aria-hidden="true"></i>
+		{{$ctrl.item.users.length}}
+	</span>
+</div>
+
+<div class="item clearfix" ng-if="$ctrl.tab === 'Conversations' ">
+	<img class="avatar float-left" ng-src="{{$ctrl.item.room.logo}}">
+	<span class="name">{{$ctrl.item.room.title}}</span>
+	<span class="label-alert float-right">
+		<i class="fa fa-commenting" aria-hidden="true"></i>
+		{{$ctrl.item.messages.length}}
+	</span>
+</div>
+
+<div class="item clearfix" ng-if="$ctrl.tab === 'Users' ">
 	<span class="online dot-green"></span>
 	<img class="avatar float-left" src="http://semantic-ui.com/images/avatar/small/daniel.jpg">
 	<span class="name">Daniel Louise</span>

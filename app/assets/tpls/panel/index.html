@@ -2,32 +2,11 @@
 	<div class="upper-wrapper">
 		<panel-header></panel-header>
 		<panel-search></panel-search>
-		<panel-tab></panel-tab>
+		<panel-tab tab="$ctrl.tab" on-change="$ctrl.change(name)"></panel-tab>
 	</div>
 	<hr>
 	<div class="list scrollbar-light">
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
-		<panel-list-item></panel-list-item>
+		<spinner ng-if="$ctrl.loading"></spinner>
+		<panel-list-item ng-repeat="item in $ctrl.collections" item="item" tab="$ctrl.tab"></panel-list-item>
 	</div>
 </div>

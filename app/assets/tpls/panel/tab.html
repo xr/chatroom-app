@@ -1,11 +1,11 @@
 <div class="tab clearfix">
-	<div class="item float-left">
+	<div ng-class="$ctrl.tab === 'Rooms' ? 'active item float-left' : 'item float-left'" ng-click="$ctrl.tab !== 'Rooms' ? $ctrl.onChange({ name: 'Rooms' }) : ''">
 		<i class="fa fa-home" aria-hidden="true"></i>
 	</div>
-	<div class="item active float-left">
+	<div ng-class="$ctrl.tab === 'Conversations' ? 'active item float-left' : 'item float-left'" ng-click="$ctrl.tab !== 'Conversations' ? $ctrl.onChange({ name: 'Conversations' }) : ''">
 		<i class="fa fa-comment" aria-hidden="true"></i>
 	</div>
-	<div class="item float-left">
+	<div ng-class="$ctrl.tab === 'Users' ? 'active item float-left' : 'item float-left'" ng-click="$ctrl.tab !== 'Users' ? $ctrl.onChange({ name: 'Users' }) : ''">
 		<i class="fa fa-group" aria-hidden="true"></i>
 	</div>
 </div>

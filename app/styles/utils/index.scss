@@ -45,3 +45,18 @@ hr {
     border-radius: 100%;
     background: $green;
 }
+
+.loading {
+    width: 100px;
+    position: absolute;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinner {
+    width: 25px;
+    margin: 0 auto;
+    color: white;
+}
