@@ -1,15 +1,23 @@
-const chatCtrl = ['Utils', 'Message', function (Utils, Message) {
+const chatCtrl = ['Utils', 'Message', 'Room', function (Utils, Message, Room) {
 	const ctrl = this;
 
 	this.messages = [];
+	this.room = null;
 	this.page = 1;
 
 	this.$onChanges = (changes) => {
 		if (!changes.roomId.isFirstChange()) {
 			console.log('this.roomId changed in chat controller', this.roomId);
-			this.fetchMessages(this.roomId);
+			this.fetchRoom(this.roomId);
 		}
 		
+	};
+
+	this.fetchRoom = (roomId) => {
+		Room.getOne(roomId).then(function (room) {
+			ctrl.room = room.data.data;
+			ctrl.fetchMessages(roomId);
+		}, Utils.handleError);
 	};
 
 	this.fetchMessages = (roomId) => {

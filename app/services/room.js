@@ -6,6 +6,11 @@ const Room = ['$http', 'config', ($http, config) => {
 		return $http.get(url);
 	};
 
+	service.getOne = function (id) {
+		let url = `${config.api}/rooms/${id}`;
+		return $http.get(url);
+	};
+
 	return service;
 }];
 
