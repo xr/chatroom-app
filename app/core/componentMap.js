@@ -1,3 +1,5 @@
+import app from '../components/app';
+
 import panel from '../components/panel';
 import panelHeader from '../components/panel/header';
 import panelSearch from '../components/panel/search';
@@ -11,6 +13,8 @@ import footer from '../components/chat/footer';
 import spinner from '../components/utils/spinner';
 
 const components = {
+	app: app,
+
 	panel: panel,
 	panelHeader: panelHeader,
 	panelSearch: panelSearch,
