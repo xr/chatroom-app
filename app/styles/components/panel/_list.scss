@@ -1,13 +1,13 @@
 @mixin list() {
 	position: absolute;
-	top: 155px;
+	top: 190px;
 	bottom: 0;
 	width: $panel-width;
 	overflow-y: scroll;
 	.item {
 		padding: $gap - 10 $gap;
 		position: relative;
-		border-bottom: 1px solid $border-color;
+		border-top: 1px solid $border-color;
 		.online {
 			position: absolute;
 			top: $gap - 10 - 5;

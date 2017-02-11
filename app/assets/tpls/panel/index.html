@@ -3,9 +3,13 @@
 		<panel-header></panel-header>
 		<panel-search></panel-search>
 		<panel-tab tab="$ctrl.tab" on-change="$ctrl.change(name)"></panel-tab>
+		<div class="create-room">
+			<i class="fa fa-plus" aria-hidden="true"></i>
+			<a >Create New Room</a>
+		</div>
 	</div>
 	<hr>
-	<div class="list scrollbar-light">
+	<div class="list">
 		<spinner ng-if="$ctrl.loading"></spinner>
 		<!-- TODO: need to except the users case -->
 		<panel-list-item ng-repeat="item in $ctrl.collections" item="item" tab="$ctrl.tab" on-select="$ctrl.select(roomId)"></panel-list-item>
