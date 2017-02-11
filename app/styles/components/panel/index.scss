@@ -2,6 +2,7 @@
 @import './search-bar';
 @import './tab';
 @import './list';
+@import './create-room';
 
 .panel {
 	position: absolute;
@@ -11,6 +12,7 @@
 	-moz-transition: all 500ms ease;
     transition: all 500ms ease;
     transform: translateX(0);
+    z-index: 999;
 	&.hide {
 		transform: translateX(- $panel-width);
 	}
@@ -27,10 +29,7 @@
 			@include tab();
 		}
 		.create-room {
-			padding: $gap - 10 $gap;
-			border-top: 1px solid $border-color;
-			text-align: center;
-			color: $white-half;
+			@include createRoom();
 		}
 	}
 

@@ -5,6 +5,7 @@ import panelHeader from '../components/panel/header';
 import panelSearch from '../components/panel/search';
 import panelTab from '../components/panel/tab';
 import panelListItem from '../components/panel/listItem';
+import createRoom from '../components/panel/createRoom';
 
 import chat from '../components/chat';
 import message from '../components/chat/message';
@@ -20,6 +21,7 @@ const components = {
 	panelSearch: panelSearch,
 	panelTab: panelTab,
 	panelListItem: panelListItem,
+	createRoom: createRoom,
 
 	chat: chat,
 	message: message,

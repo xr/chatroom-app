@@ -63,3 +63,37 @@ hr {
         color: $panel-bg;
     }
 }
+
+.form-group {
+    height: $panel-search-height;
+    position: relative;
+    margin-bottom: $gap;
+    input {
+        text-indent: $panel-search-height;
+        width: 100%;
+        height: $panel-search-height;
+        line-height: $panel-search-height;
+        background: $panel-search-bg;
+        outline: none;
+        border: 0;
+        color: $white;
+    }
+    i {
+        position: absolute;
+        text-align: center;
+        width: $panel-search-height;
+        height: $panel-search-height;
+        line-height: $panel-search-height;
+        color: $white-half;
+        background: $panel-search-bg;
+    }
+}
+
+button {
+    padding: $gap - 10;
+    background: $panel-search-bg;
+    outline: 0;
+    border: 0;
+    height: $panel-search-height;
+    color: $white;
+}
