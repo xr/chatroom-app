@@ -1,7 +1,7 @@
 @mixin control() {
 	.right-button {
 		line-height: $chat-title-height;
-		padding: 0 $gap;
+		padding: 0 $gap - 10;
 		position: fixed;
 		display: inline-block;
 		color: $green;
@@ -11,7 +11,7 @@
 		}
 	}
 	.edit-room {
-		right: 60px;
+		right: 40px;
 		cursor: pointer;
 		.edit-room-modal {
 			width: 300px;

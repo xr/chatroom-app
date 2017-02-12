@@ -20,9 +20,22 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', function (U
 	this.$onChanges = (changes) => {
 		if (!changes.roomId.isFirstChange()) {
 			console.log('this.roomId changed in chat controller', this.roomId);
+			$interval.cancel(ctrl.intervalId);
 			this.fetchRoom(this.roomId);
 		}
 		
+	};
+
+	this.updateRoom = (room) => {
+		let data = {};
+		if (room.title !== this.room.title) {
+			data.title = room.title;
+		}
+		data.desc = room.desc;
+		data.logo = room.logo;
+		Room.update(room._id, data).then(function (room) {
+			ctrl.room = room.data.data;
+		})
 	};
 
 	this.fetchRoom = (roomId) => {

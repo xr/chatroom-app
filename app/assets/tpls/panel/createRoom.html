@@ -6,17 +6,17 @@
 		<form ng-submit="$ctrl.onAdd({ room: room }); toggleCreateRoomModal = false; room = {};">
 			<div class="form-group">
 				<i class="fa fa-heart"></i>
-				<input type="text" class="title" placeholder="Room title" required="required" ng-model="room.title">
+				<input type="text" class="title" placeholder="Room title" required="required" ng-model="room.title" maxlength="15">
 			</div>
 
 			<div class="form-group">
 				<i class="fa fa-pencil"></i>
-				<input type="text" class="description" placeholder="Room description" ng-model="room.desc">
+				<input type="text" class="description" placeholder="Room description" ng-model="room.desc" maxlength="30">
 			</div>
 
 			<div class="form-group">
 				<i class="fa fa-link"></i>
-				<input type="text" class="logo" placeholder="Logo URL" ng-model="room.logo">
+				<input type="url" class="logo" placeholder="Logo URL" ng-model="room.logo">
 			</div>
 
 			<button>Submit</button>

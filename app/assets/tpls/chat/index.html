@@ -1,7 +1,11 @@
 <div class="chat">
 	<div class="header">
+		<div class="logo" ng-if="$ctrl.room.logo">
+			<img ng-src="{{$ctrl.room.logo}}" alt="{{$ctrl.room.title}}">
+		</div>
 		<h1>{{$ctrl.room.title}}</h1>
-		<control room="$ctrl.room" ng-if="$ctrl.room.title !== 'Welcome'"></control>
+		<span class="desc">{{$ctrl.room.desc}}</span>
+		<control room="$ctrl.room" on-update="$ctrl.updateRoom(room)" ng-if="$ctrl.room.title !== 'Welcome'"></control>
 	</div>
 	<div class="content">
 		<spinner color="black" ng-if="$ctrl.loading"></spinner>

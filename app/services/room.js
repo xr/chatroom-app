@@ -16,6 +16,11 @@ const Room = ['$http', 'config', ($http, config) => {
 		return $http.post(url, data);
 	};
 
+	service.update = function (id, data) {
+		let url = `${config.api}/rooms/${id}`;
+		return $http.put(url, data);
+	};
+
 	return service;
 }];
 

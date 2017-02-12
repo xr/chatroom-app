@@ -7,7 +7,22 @@
 	border-bottom: 1px solid $border-color-light;
 	padding-left: $gap;
 	z-index: 999;
+	.logo {
+		height: 30px;
+		width: 30px;
+		display: inline-block;
+		vertical-align: middle;
+		img {
+			width: 100%;
+		}
+	}
+	.desc {
+		font-style: italic;
+		font-weight: 100;
+		font-size: 12px;
+	}
 	h1 {
+		margin: 0 $gap - 10;
 		line-height: $chat-title-height;
 	}
 	@include control();
