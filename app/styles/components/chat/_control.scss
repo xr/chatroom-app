@@ -5,11 +5,62 @@
 		position: fixed;
 		display: inline-block;
 		color: $green;
+		a {
+			line-height: $chat-title-height;
+			display: inline-block;
+		}
 	}
 	.edit-room {
 		right: 60px;
+		cursor: pointer;
+		.edit-room-modal {
+			width: 300px;
+			top: 70px;
+			height: 240px;
+			background: $panel-bg;
+			box-sizing: border-box;
+			padding: $gap + 10;
+			position: absolute;
+			left: -250px;
+			text-align: center;
+			display: none;
+			-webkit-animation-name: animatetop;
+			-webkit-animation-duration: 0.4s;
+			animation-name: animatetop;
+			animation-duration: 0.4s;
+			&.active {
+				display: block;
+			}
+			&:not(i):not(.form-group)::before {
+				content: "\A";
+			    border-style: solid;
+			    border-width: 0 10px 10px 10px;
+			    border-color: transparent transparent #2e3238 transparent;
+			    position: absolute;
+			    top: -10px;
+			    right: 10px;
+			}
+			i {
+				top: 10px;
+			}
+			.fa-close {
+				right: 10px;
+				top: 10px;
+				color: $white-half;
+				cursor: pointer;
+				position: absolute;
+			}
+		}
 	}
 	.join-room {
 		right: 0;
+	}
+	@keyframes animatetop {
+		from {top: -300px; opacity: 0}
+		to {top: 70px; opacity: 1}
+	}
+	@-webkit-keyframes animatetop {
+		from {top: -300px; opacity: 0} 
+		to {top: 70px; opacity: 1}
 	}
 }

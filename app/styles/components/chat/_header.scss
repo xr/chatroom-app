@@ -6,6 +6,7 @@
 	height: $chat-title-height;
 	border-bottom: 1px solid $border-color-light;
 	padding-left: $gap;
+	z-index: 999;
 	h1 {
 		line-height: $chat-title-height;
 	}

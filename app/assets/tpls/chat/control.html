@@ -1,5 +1,26 @@
 <div class="right-button edit-room" ng-if="$ctrl.room.owner === $root.user._id">
-	Edit
+	<a ng-click="toggleEditRoomModal = !toggleEditRoomModal" ng-init="toggleEditRoomModal = false">Edit</a>
+	<div ng-class="toggleEditRoomModal ? 'edit-room-modal active' : 'edit-room-modal' ">
+		<i class="fa fa-close" ng-click="toggleEditRoomModal = false"></i>
+		<form ng-submit="$ctrl.onUpdate({ room: room }); toggleEditRoomModal = false; room = {};">
+			<div class="form-group">
+				<i class="fa fa-heart"></i>
+				<input type="text" class="title" placeholder="Room title" required="required" ng-model="room.title">
+			</div>
+
+			<div class="form-group">
+				<i class="fa fa-pencil"></i>
+				<input type="text" class="description" placeholder="Room description" ng-model="room.desc">
+			</div>
+
+			<div class="form-group">
+				<i class="fa fa-link"></i>
+				<input type="text" class="logo" placeholder="Logo URL" ng-model="room.logo">
+			</div>
+
+			<button>Submit</button>
+		</form>
+	</div>
 </div>
 <div class="right-button join-room">
 	Join
