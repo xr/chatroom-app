@@ -2,9 +2,10 @@
 	<div class="time" ng-if="$ctrl.pre.from._id !== $ctrl.message.from._id">
 		<span am-time-ago="$ctrl.message.created"></span>
 	</div>
-	<img class="avatar" ng-src="{{$ctrl.message.from.fbid | avatar}}" alt="">
+	<img class="avatar" ng-if="!$ctrl.message.from.avatar" ng-src="{{$ctrl.message.from.fbid | avatar}}" alt="">
+	<img class="avatar" ng-if="$ctrl.message.from.avatar" ng-src="{{$ctrl.message.from.avatar}}" alt="">
 	<div class="text">
-		<p class="nickname">{{$ctrl.message.from.name}}</p>
+		<p class="nickname" ng-if="$ctrl.pre.from._id !== $ctrl.message.from._id">{{$ctrl.message.from.name}}</p>
 		<div class="bubble default">
 			<div class="plain">
 				{{$ctrl.message.content}}

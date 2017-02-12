@@ -1,0 +1,15 @@
+@mixin control() {
+	.right-button {
+		line-height: $chat-title-height;
+		padding: 0 $gap;
+		position: fixed;
+		display: inline-block;
+		color: $green;
+	}
+	.edit-room {
+		right: 60px;
+	}
+	.join-room {
+		right: 0;
+	}
+}

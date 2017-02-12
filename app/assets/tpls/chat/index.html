@@ -1,6 +1,7 @@
 <div class="chat">
 	<div class="header">
 		<h1>{{$ctrl.room.title}}</h1>
+		<control room="$ctrl.room" ng-if="$ctrl.room.title !== 'Welcome'"></control>
 	</div>
 	<div class="content">
 		<spinner color="black" ng-if="$ctrl.loading"></spinner>

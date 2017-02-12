@@ -1,3 +1,5 @@
+@import './control.scss';
+
 @mixin header() {
 	position: fixed;
 	width: 100%;
@@ -7,4 +9,5 @@
 	h1 {
 		line-height: $chat-title-height;
 	}
+	@include control();
 }

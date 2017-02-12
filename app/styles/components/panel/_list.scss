@@ -8,6 +8,7 @@
 		padding: $gap - 10 $gap;
 		position: relative;
 		border-top: 1px solid $border-color;
+		cursor: pointer;
 		.online {
 			position: absolute;
 			top: $gap - 10 - 5;

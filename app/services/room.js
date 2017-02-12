@@ -11,6 +11,11 @@ const Room = ['$http', 'config', ($http, config) => {
 		return $http.get(url);
 	};
 
+	service.create = function (data) {
+		let url = `${config.api}/rooms`;
+		return $http.post(url, data);
+	};
+
 	return service;
 }];
 

@@ -8,6 +8,7 @@ import panelListItem from '../components/panel/listItem';
 import createRoom from '../components/panel/createRoom';
 
 import chat from '../components/chat';
+import control from '../components/chat/control';
 import message from '../components/chat/message';
 import footer from '../components/chat/footer';
 
@@ -24,6 +25,7 @@ const components = {
 	createRoom: createRoom,
 
 	chat: chat,
+	control: control,
 	message: message,
 	footer: footer,
 

@@ -24,6 +24,12 @@ const panelCtrl = ['Room', 'User', 'Utils', function (Room, User, Utils) {
 		this[`fetch${this.tab}`]();
 	};
 
+	this.add = (room) => {
+		Room.create(room).then(() => {
+			ctrl.fetchRooms();
+		}, Utils.handleError);
+	};
+
 	this.fetchRooms = () => {
 		let query = `?page=${this.pagination['Rooms']}`;
 		Room.get(query).then((rooms) => {
