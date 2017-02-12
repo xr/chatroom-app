@@ -1,19 +1,9 @@
 <div class="footer">
 	<div ng-if="$root.user && $ctrl.room._id">
-		<div class="toolbar">
-			<a href="">
-				<i class="fa fa-2x fa-smile-o" aria-hidden="true"></i>
-			</a>
-		</div>
-		<div class="editor-wrapper">
-			<div contenteditable class="editarea" placeholder="Press Shift+Enter to submit, markdown support." ng-model="$ctrl.content" strip-br="true" required ng-keypress="$ctrl.monitor($event)"></div>
-			<div class="editor-submit">
-				<button ng-click="$ctrl.submit()">Submit</button>
-			</div>
-		</div>
+		<textarea class="editarea" rows="5" enter-submit="submit()" ng-model="$ctrl.content" placeholder="`Shift + Enter` for linebreak, `Enter` to submit and support markdown!"></textarea>
 	</div>
 	<div class="welcome-room" ng-if="$root.user && !$ctrl.room._id">
-		Please choose a chat room and start!
+		This is the welcome room, please choose a chat room from left panel and start chatting!
 	</div>
 	<div class="facebook-login" ng-if="!$root.user">
 		<i class="fa fa-facebook" aria-hidden="true"></i>

@@ -1,17 +1,9 @@
-const footerCtrl = [function () {
+const footerCtrl = ['$scope', function ($scope) {
 	const ctrl = this;
 
 	this.content = null;
 
-	this.monitor = (event) => {
-		// shiftKey
-		if (event.code === 'Enter' && event.shiftKey) {
-			event.preventDefault();
-			ctrl.submit();
-		}
-	};
-
-	this.submit = () => {
+	$scope.submit = () => {
 		this.addMessage({
 			message: this.content
 		});

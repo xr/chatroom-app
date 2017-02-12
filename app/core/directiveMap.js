@@ -1,7 +1,7 @@
-import contenteditable from '../directives/contenteditable';
+import enterSubmit from '../directives/enterSubmit';
 
 const directives = {
-	contenteditable: contenteditable
+	enterSubmit: enterSubmit
 };
 
 export default directives;

@@ -9,35 +9,18 @@
 		padding: $gap;
 		color: gray;
 	}
-	.toolbar {
-		height: 30px;
-		padding: $gap - 15 $gap;
-		a {
-			display: inline-block;
-			width: 30px;
-			height: 30px;
-			color: grey;
-			font-weight: 100;
+	textarea {
+		background: $chat-bg;
+		margin: $gap;
+		width: 90%;
+		resize: none;
+		border: 0;
+		height: 4em;
+		font-size: 14px;
+		&:focus {
+			outline: none;
 		}
 	}
-	.editor-wrapper {
-		padding: $gap - 15 $gap;
-		.editarea {
-			height: 5em;
-			overflow-y: scroll;
-			&:focus {
-				outline: none;
-			}
-		}
-		.editor-submit {
-			width: 100%;
-			text-align: right;
-		}
-	}
-	[contenteditable]:empty:not(:focus):before{
-		color: gray;
-        content:attr(placeholder);
-    }
     .facebook-login {
 		position: absolute;
 		top: 50%;

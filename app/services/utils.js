@@ -5,6 +5,13 @@ const Utils = [() => {
 		console.error(err);
 	};
 
+	service.scrollBottom = function (selector) {
+		/*globals $:false */
+		setTimeout(function () {
+			$(selector).scrollTop($(selector).height());
+		}, 0);
+	};
+
 	return service;
 }];
 

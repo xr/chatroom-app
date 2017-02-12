@@ -7,7 +7,7 @@
 		<span class="desc">{{$ctrl.room.desc}}</span>
 		<control room="$ctrl.room" on-update="$ctrl.updateRoom(room)" ng-if="$ctrl.room.title !== 'Welcome'"></control>
 	</div>
-	<div class="content">
+	<div class="content" id="chatWindow">
 		<spinner color="black" ng-if="$ctrl.loading"></spinner>
 		<message ng-repeat="message in $ctrl.messages" message="message" pre="$ctrl.messages[$index - 1]"></message>
 	</div>

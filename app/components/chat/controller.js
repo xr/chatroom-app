@@ -35,7 +35,7 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', '$rootScope
 		data.logo = room.logo;
 		Room.update(room._id, data).then(function (room) {
 			ctrl.room = room.data.data;
-		})
+		});
 	};
 
 	this.fetchRoom = (roomId) => {
@@ -53,6 +53,7 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', '$rootScope
 			ctrl.messages = messages.data.data.messages.reverse();
 			ctrl.page = messages.data.data.page;
 			ctrl.loading = false;
+			Utils.scrollBottom('#chatWindow');
 		}, Utils.handleError);
 	};
 
@@ -72,6 +73,7 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', '$rootScope
 			};
 
 			ctrl.messages.push(pushMsg);
+			Utils.scrollBottom('#chatWindow');
 		}, Utils.handleError);
 	};
 
