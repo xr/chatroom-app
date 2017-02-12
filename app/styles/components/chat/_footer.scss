@@ -5,6 +5,10 @@
 	bottom: 0;
 	right: 0;
 	border-top: 1px solid $border-color-light;
+	.welcome-room {
+		padding: $gap;
+		color: gray;
+	}
 	.toolbar {
 		height: 30px;
 		padding: $gap - 15 $gap;
@@ -19,14 +23,18 @@
 	.editor-wrapper {
 		padding: $gap - 15 $gap;
 		.editarea {
-			height: 6em;
+			height: 5em;
 			overflow-y: scroll;
 			&:focus {
 				outline: none;
 			}
 		}
+		.editor-submit {
+			width: 100%;
+			text-align: right;
+		}
 	}
-	[contenteditable=true]:empty:not(:focus):before{
+	[contenteditable]:empty:not(:focus):before{
 		color: gray;
         content:attr(placeholder);
     }

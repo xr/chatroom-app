@@ -3,7 +3,12 @@ const message = {
   bindings: {
   	message: '<',
   	pre: '<'
-  }
+  },
+  controller: ['marked', function (marked) {
+  	this.$onInit = () => {
+		this.message.content = marked(this.message.content);
+  	};
+  }]
 };
 
 export default message;

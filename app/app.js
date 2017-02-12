@@ -3,7 +3,7 @@ import 'angular-ui-router';
 import 'moment';
 import 'angular-moment';
 import 'angular-marked';
-
+import 'angular-sanitize';
 
 import config from './core/config';
 import onConfig from './core/onConfig';
@@ -13,19 +13,22 @@ import services from './core/serviceMap';
 import components from './core/componentMap';
 import filters from './core/filterMap';
 import controllers from './core/controllerMap';
+import directives from './core/directiveMap';
 
 import 'moment/locale/en-gb';
 const requires = [
 	'ui.router',
 	'angularMoment',
-	'hc.marked'
+	'hc.marked',
+	'ngSanitize'
 ];
 
 const ingredients = {
 	service: services,
 	component: components,
 	filter: filters,
-	controller: controllers
+	controller: controllers,
+	directive: directives
 };
 
 window.app = angular.module('chatApp', requires);

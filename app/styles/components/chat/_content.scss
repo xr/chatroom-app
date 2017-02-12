@@ -44,6 +44,9 @@
 			display: inline-block;
 			.plain {
 				padding: $gap - 10 $gap - 5;
+				img {
+					width: 100%;
+				}
 			}
 			&.default::before {
 				content:"\A";

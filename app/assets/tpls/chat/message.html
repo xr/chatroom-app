@@ -7,8 +7,7 @@
 	<div class="text">
 		<p class="nickname" ng-if="$ctrl.pre.from._id !== $ctrl.message.from._id">{{$ctrl.message.from.name}}</p>
 		<div class="bubble default">
-			<div class="plain">
-				{{$ctrl.message.content}}
+			<div class="plain" ng-bind-html="$ctrl.message.content | trust">
 			</div>
 		</div>
 	</div>
@@ -21,8 +20,7 @@
 	<img class="avatar" ng-src="{{$ctrl.message.from.fbid | avatar}}" alt="">
 	<div class="text">
 		<div class="bubble">
-			<div class="plain">
-				{{$ctrl.message.content}}
+			<div class="plain" ng-bind-html="$ctrl.message.content | trust">
 			</div>
 		</div>
 	</div>

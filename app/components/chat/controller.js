@@ -1,4 +1,4 @@
-const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', function (Utils, Message, Room, $interval, moment) {
+const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', '$rootScope', function (Utils, Message, Room, $interval, moment, $rootScope) {
 	const ctrl = this;
 
 	this.messages = [{
@@ -53,6 +53,25 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', function (U
 			ctrl.messages = messages.data.data.messages.reverse();
 			ctrl.page = messages.data.data.page;
 			ctrl.loading = false;
+		}, Utils.handleError);
+	};
+
+	this.addMessage = (message) => {
+		let data = {
+			rid: this.room._id,
+			content: message
+		};
+		Message.add(data).then(function (message) {
+			let pushMsg = {
+				from: {
+					_id: message.data.data.from,
+					fbid: $rootScope.user.fbid	
+				},
+				content: message.data.data.content,
+				created: message.data.data.created
+			};
+
+			ctrl.messages.push(pushMsg);
 		}, Utils.handleError);
 	};
 
