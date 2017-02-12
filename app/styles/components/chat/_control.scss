@@ -11,7 +11,7 @@
 		}
 	}
 	.edit-room {
-		right: 40px;
+		right: $gap - 10;
 		cursor: pointer;
 		.edit-room-modal {
 			width: 300px;

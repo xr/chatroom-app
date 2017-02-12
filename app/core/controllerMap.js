@@ -4,6 +4,7 @@ import panelCtrl from '../components/panel/controller';
 import panelHeaderCtrl from '../components/panel/header/controller';
 
 import chatCtrl from '../components/chat/controller';
+import controlCtrl from '../components/chat/control/controller';
 
 const controllers = {
 	appCtrl: appCtrl,
@@ -11,7 +12,8 @@ const controllers = {
 	panelCtrl: panelCtrl,
 	panelHeaderCtrl: panelHeaderCtrl,
 
-	chatCtrl: chatCtrl
+	chatCtrl: chatCtrl,
+	controlCtrl: controlCtrl
 };
 
 export default controllers;

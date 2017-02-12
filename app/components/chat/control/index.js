@@ -4,12 +4,7 @@ const control = {
   	room: '<',
   	onUpdate: '&'
   },
-  controller: [function () {
-  	this.$onChanges = (changes) => {
-		this.roomCopy = angular.copy(this.room);
-  		console.log('this.roomCopy', this.roomCopy);
-	};
-  }]
+  controller: 'controlCtrl'
 };
 
 export default control;
