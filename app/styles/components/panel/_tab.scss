@@ -1,6 +1,7 @@
 @mixin tab() {
 	padding: $gap - 10;
-	padding-top: 0;
+	border-top: 1px solid $border-color;
+	border-bottom: 1px solid $border-color;
 	.item {
 		width: 33.33333%;
 		text-align: center;

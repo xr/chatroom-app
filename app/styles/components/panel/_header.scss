@@ -1,6 +1,5 @@
 @mixin header() {
 	padding: $gap;
-	padding-bottom: 0;
 	.avatar {
 		display: table-cell;
 		vertical-align: middle;

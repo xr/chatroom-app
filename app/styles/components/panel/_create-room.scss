@@ -1,6 +1,5 @@
 @mixin createRoom() {
 	padding: $gap - 10 $gap;
-	border-top: 1px solid $border-color;
 	text-align: center;
 	color: $white-half;
 	position: relative;
