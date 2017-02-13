@@ -33,20 +33,25 @@ const panelCtrl = ['Room', 'User', 'Utils', function (Room, User, Utils) {
 	this.fetchRooms = () => {
 		let query = `?page=${this.pagination['Rooms']}`;
 		Room.get(query).then((rooms) => {
-			ctrl.loading = false;
-			ctrl.collections = rooms.data.data.rooms;
+			ctrl.handleSuccess(rooms.data.data.rooms);
 		}, Utils.handleError);
 	};
 
 	this.fetchConversations = () => {
 		User.getNotifications().then((notifications) => {
-			ctrl.loading = false;
-			ctrl.collections = notifications.data.data;
+			ctrl.handleSuccess(notifications.data.data);
 		}, Utils.handleError);
 	};
 
 	this.fetchUsers = () => {
-		console.log('fetchUsers');
+		User.getAll().then((users) => {
+			ctrl.handleSuccess(users.data.data.users);
+		}, Utils.handleError);
+	};
+
+	this.handleSuccess = (data) => {
+		this.loading = false;
+		this.collections = data;
 	};
 
 }];
