@@ -59,7 +59,7 @@ const panelCtrl = ['Room', 'User', 'Utils', '$rootScope', function (Room, User, 
 
 	this.add = (room) => {
 		Room.create(room).then(() => {
-			ctrl.fetchRooms();
+			ctrl.change('Rooms');
 		}, Utils.handleError);
 	};
 

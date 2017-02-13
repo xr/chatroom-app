@@ -39,6 +39,7 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', '$rootScope
 				ctrl.messages.push(data.content);
 				$rootScope.$digest();
 				Utils.scrollBottom('#chatWindow');
+				Utils.beep();
 			}
 		} else {
 			// if the received rid is not current one
@@ -47,6 +48,7 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', '$rootScope
 			// is to avoid the frequently incoming events
 			// when user is chatting within the same room
 			$rootScope.$emit('updateConversation', data);
+			Utils.beep();
 		}
 	};
 
