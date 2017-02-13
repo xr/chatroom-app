@@ -6,6 +6,11 @@ const User = ['$http', 'config', ($http, config) => {
 		return $http.get(url);
 	};
 
+	service.update = function (id, data) {
+		let url = `${config.api}/users/${id}`;
+		return $http.put(url, data);
+	};
+
 	service.getNotifications = function () {
 		let url = `${config.api}/notifications`;
 		return $http.get(url);

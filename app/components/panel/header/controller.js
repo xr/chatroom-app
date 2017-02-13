@@ -1,13 +1,9 @@
-const panelHeaderCtrl = ['$rootScope', ($rootScope) => {
-	const vm = {};
+const panelHeaderCtrl = ['User', 'Utils', function (User, Utils) {
 
-	if ($rootScope.user) {
-		vm.avatar = `http://graph.facebook.com/${$rootScope.user.fbid}/picture`;
-	} else {
-		vm.avatar = 'https://api.adorable.io/avatars/40/anonymous';
-	}
+	this.updateUser = (event, id) => {
+		User.update(id, { name: event.target.innerText}).then(() => {}, Utils.handleError);
+	};
 
-	return vm;
 }];
 
 export default panelHeaderCtrl;

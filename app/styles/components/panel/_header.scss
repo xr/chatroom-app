@@ -28,6 +28,9 @@
 		    width: $info-width;
 		    line-height: $avatar-size;
 		}
+		h1[contenteditable] {
+			border-bottom: 1px dotted $white-half;
+		}
 	}
 	.opts {
 		display: table-cell;

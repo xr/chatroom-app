@@ -1,10 +1,14 @@
 <div class="header clearfix">
     <div class="avatar float-left">
-        <img ng-src="{{$ctrl.avatar}}">
+        <img ng-src="{{$root.user.fbid | avatar}}" ng-if="$root.user">
+        <img src="https://api.adorable.io/avatars/40/anonymous" ng-if="!$root.user">
     </div>
     <div class="info float-left">
-        <h1 class="nickname">
-            {{$root.user ? $root.user.name : 'Guest'}}
+        <h1 class="nickname" ng-if="!$root.user">
+            Guest
+        </h1>
+        <h1 contenteditable class="nickname" ng-blur="$ctrl.updateUser($event, $root.user._id)" ng-if="$root.user">
+            {{$root.user.name}}
         </h1>
     </div>
     <a class="opts float-right" ng-if="!$root.user" href="{{$root.config.api}}/auth/facebook">

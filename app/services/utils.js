@@ -9,7 +9,7 @@ const Utils = [() => {
 		/*globals $:false */
 		setTimeout(function () {
 			$(selector).scrollTop($(selector).height());
-		}, 50);
+		});
 	};
 
 	return service;
