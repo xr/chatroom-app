@@ -49,6 +49,13 @@ hr {
     background: $green;
 }
 
+.dot-red {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: red;
+}
+
 .loading {
     width: 100px;
     position: absolute;

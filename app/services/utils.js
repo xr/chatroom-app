@@ -1,3 +1,4 @@
+/*globals $:false */
 const Utils = [() => {
 	const service = {};
 
@@ -5,10 +6,19 @@ const Utils = [() => {
 		console.error(err);
 	};
 
-	service.scrollBottom = function (selector) {
-		/*globals $:false */
-		setTimeout(function () {
-			$(selector).scrollTop($(selector).height());
+	service.scrollBottom = function (selector, avoid) {
+		if (!avoid) {
+			setTimeout(function () {
+				$(selector).scrollTop($(selector).prop('scrollHeight'));
+			});
+		}
+	};
+
+	service.onScrollTop = function (px, cb) {
+		$('#chatWindow').on('scroll', function() {
+			if ($(this).scrollTop() < px) {
+				cb();
+			}
 		});
 	};
 

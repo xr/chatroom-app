@@ -3,7 +3,7 @@
 		<i class="fa fa-home" aria-hidden="true"></i>
 	</div>
 	<div ng-class="$ctrl.tab === 'Conversations' ? 'active item float-left' : 'item float-left'" ng-click="$ctrl.tab !== 'Conversations' ? $ctrl.onChange({ name: 'Conversations' }) : ''">
-		<i class="fa fa-comment" aria-hidden="true"></i>
+		<i ng-class="$ctrl.highlight === 'Conversations' ? 'fa fa-comment highlight' : 'fa fa-comment' " aria-hidden="true"></i>
 	</div>
 	<div ng-class="$ctrl.tab === 'Users' ? 'active item float-left' : 'item float-left'" ng-click="$ctrl.tab !== 'Users' ? $ctrl.onChange({ name: 'Users' }) : ''">
 		<i class="fa fa-group" aria-hidden="true"></i>

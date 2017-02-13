@@ -1,4 +1,4 @@
-<div class="item clearfix" ng-if="$ctrl.tab === 'Rooms' " ng-click="$ctrl.onSelect({ roomId: $ctrl.item._id })">
+<div class="item clearfix" ng-if="$ctrl.tab === 'Rooms' " ng-click="$ctrl.onSelect({ roomId: $ctrl.item._id });">
 	<img class="avatar float-left" ng-src="{{$ctrl.item.logo}}">
 	<span class="name">{{$ctrl.item.title}}</span>
 	<span class="label-alert float-right">
@@ -7,7 +7,8 @@
 	</span>
 </div>
 
-<div class="item clearfix" ng-if="$ctrl.tab === 'Conversations' " ng-click="$ctrl.onSelect({ roomId: $ctrl.item.room._id })">
+<div class="item clearfix" ng-if="$ctrl.tab === 'Conversations' " ng-click="$ctrl.onSelect({ roomId: $ctrl.item.room._id }); $ctrl.item.unread = 0;">
+	<span class="online dot-red" ng-if="$ctrl.item.unread"></span>
 	<img class="avatar float-left" ng-src="{{$ctrl.item.room.logo}}">
 	<span class="name">{{$ctrl.item.room.title}}</span>
 	<span class="label-alert time float-right" am-time-ago="$ctrl.item.messages[0].created">

@@ -16,14 +16,33 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', '$rootScope
 	};
 	this.page = 1;
 	this.intervalId = null;
+	this.noMsgs = false;
+
+	this.$onInit = () => {
+		Utils.onScrollTop(20, ctrl.fetchMessages);
+		$rootScope.$on('ws', ctrl.onWs);
+	};
 
 	this.$onChanges = (changes) => {
 		if (!changes.roomId.isFirstChange()) {
-			console.log('this.roomId changed in chat controller', this.roomId);
 			$interval.cancel(ctrl.intervalId);
+			ctrl.noMsgs = false;
+			ctrl.page = 1;
 			this.fetchRoom(this.roomId);
 		}
 		
+	};
+
+	this.onWs = (event, data) => {
+		if (data.rid === ctrl.room._id) {
+			if (data.content.from._id !== $rootScope.user._id) {
+				ctrl.messages.push(data.content);	
+			}
+		} else {
+			// if the received rid is not current one
+			// need to trigger the updateConversation event
+			$rootScope.$emit('updateConversation', data);
+		}
 	};
 
 	this.updateRoom = (room) => {
@@ -41,19 +60,30 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', '$rootScope
 	this.fetchRoom = (roomId) => {
 		Room.getOne(roomId).then(function (room) {
 			ctrl.room = room.data.data;
-			ctrl.fetchMessages(roomId);
+			ctrl.fetchMessages(roomId, true);
 		}, Utils.handleError);
 	};
 
-	this.fetchMessages = (roomId) => {
+	this.fetchMessages = (roomId, replace) => {
+		if (this.noMsgs) {
+			return;
+		}
+		roomId = roomId ? roomId : this.room._id;
 		this.loading = true;
 		let query = `?page=${this.page}&rid=${roomId}`;
 		Message.get(query).then(function (messages) {
-			console.log('messages', messages);
-			ctrl.messages = messages.data.data.messages.reverse();
-			ctrl.page = messages.data.data.page;
+			if (!messages.data.data.messages.length) {
+				ctrl.noMsgs = true;
+			}
+			let treatedMsgs = messages.data.data.messages.reverse();
+			if (replace) {
+				ctrl.messages = treatedMsgs;
+			} else {
+				Array.prototype.unshift.apply(ctrl.messages, treatedMsgs);
+			}
+			ctrl.page = messages.data.data.page + 1;
 			ctrl.loading = false;
-			Utils.scrollBottom('#chatWindow');
+			Utils.scrollBottom('#chatWindow', !replace);
 		}, Utils.handleError);
 	};
 
@@ -71,7 +101,10 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', '$rootScope
 				content: message.data.data.content,
 				created: message.data.data.created
 			};
-
+			window.socket.send({
+              rid: ctrl.room._id,
+              content: pushMsg
+            });
 			ctrl.messages.push(pushMsg);
 			Utils.scrollBottom('#chatWindow');
 		}, Utils.handleError);

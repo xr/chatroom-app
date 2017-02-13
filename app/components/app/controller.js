@@ -3,7 +3,6 @@ const appCtrl = [function () {
 	this.roomId = null;
 
 	this.onSelect = (roomId) => {
-		console.log('get roomId from app', roomId);
 		this.roomId = roomId;
 	};
 }];
