@@ -101,7 +101,8 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', '$rootScope
 			let pushMsg = {
 				from: {
 					_id: message.data.data.from,
-					fbid: $rootScope.user.fbid	
+					fbid: $rootScope.user.fbid,
+					name: $rootScope.user.name
 				},
 				content: message.data.data.content,
 				created: message.data.data.created
