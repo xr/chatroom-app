@@ -36,11 +36,16 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', '$rootScope
 	this.onWs = (event, data) => {
 		if (data.rid === ctrl.room._id) {
 			if (data.content.from._id !== $rootScope.user._id) {
-				ctrl.messages.push(data.content);	
+				ctrl.messages.push(data.content);
+				$rootScope.$digest();
+				Utils.scrollBottom('#chatWindow');
 			}
 		} else {
 			// if the received rid is not current one
 			// need to trigger the updateConversation event
+			// the reason why we need to do this roundabout
+			// is to avoid the frequently incoming events
+			// when user is chatting within the same room
 			$rootScope.$emit('updateConversation', data);
 		}
 	};

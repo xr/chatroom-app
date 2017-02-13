@@ -13,11 +13,11 @@ const panelCtrl = ['Room', 'User', 'Utils', '$rootScope', function (Room, User, 
 	this.$onInit = () => {
 		this[`fetch${this.tab}`]();
 		window.socket.on('o2o', ctrl.o2o);
+		$rootScope.$on('updateConversation', ctrl.onConversation);
 	};
 
 	this.select = (roomId) => {
 		this.onSelect({ roomId: roomId });
-		$rootScope.$on('updateConversation', ctrl.onConversation);
 	};
 
 	this.o2o = () => {
@@ -32,8 +32,10 @@ const panelCtrl = ['Room', 'User', 'Utils', '$rootScope', function (Room, User, 
 			// if tab is not conversation
 			// need high light the conversation tab
 			this.highlight = 'Conversations';
+			$rootScope.$digest();
 		} else if ($rootScope.user.rooms.indexOf(data.rid) === -1) {
 			// if the new conversation do not exisits before
+			// then just fetch it
 			ctrl.fetchConversations();
 		} else {
 			// if tab is converstaion
@@ -43,6 +45,7 @@ const panelCtrl = ['Room', 'User', 'Utils', '$rootScope', function (Room, User, 
 					item.unread = true;
 				}
 			});
+			$rootScope.$digest();
 		}
 	};
 

@@ -4,7 +4,6 @@ const onRun = ['User', '$rootScope', 'config', (User, $rootScope, config) => {
 	$rootScope.config = config;
 
 	User.get().then((user) => {
-		console.log('user', user);
 		$rootScope.user = user.data.data;
 		$rootScope.loading = false;
 
@@ -14,7 +13,6 @@ const onRun = ['User', '$rootScope', 'config', (User, $rootScope, config) => {
            alert(err);
         });
         window.socket.on($rootScope.user._id, function(data){
-          console.log('get events....', data);
           $rootScope.$emit('ws', data);
         });
 	}, (err) => {
