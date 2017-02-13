@@ -36,7 +36,10 @@ hr {
     width: 30px;
     height: 30px;
     line-height: 30px;
-    color: white;
+    color: $white-half;
+    &.time {
+        width: auto;
+    }
 }
 
 .dot-green {

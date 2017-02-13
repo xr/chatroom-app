@@ -7,12 +7,11 @@
 	</span>
 </div>
 
-<div class="item clearfix" ng-if="$ctrl.tab === 'Conversations' ">
+<div class="item clearfix" ng-if="$ctrl.tab === 'Conversations' " ng-click="$ctrl.onSelect({ roomId: $ctrl.item.room._id })">
 	<img class="avatar float-left" ng-src="{{$ctrl.item.room.logo}}">
 	<span class="name">{{$ctrl.item.room.title}}</span>
-	<span class="label-alert float-right">
-		<i class="fa fa-commenting" aria-hidden="true"></i>
-		{{$ctrl.item.messages.length}}
+	<span class="label-alert time float-right" am-time-ago="$ctrl.item.messages[0].created">
+		
 	</span>
 </div>
 
