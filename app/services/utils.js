@@ -4,6 +4,9 @@ const Utils = [() => {
 
 	service.handleError = function (err) {
 		console.error(err);
+		if (err.status === 401) {
+			alert('you need to login first, thanks.');
+		}
 	};
 
 	service.scrollBottom = function (selector, avoid) {

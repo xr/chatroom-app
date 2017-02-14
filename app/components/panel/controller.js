@@ -20,6 +20,24 @@ const panelCtrl = ['Room', 'User', 'Utils', '$rootScope', function (Room, User, 
 		this.onSelect({ roomId: roomId });
 	};
 
+	this.create = (user) => {
+		if (user._id !== $rootScope.user._id) {
+			Room.create({
+				title: user.fbid,
+				desc: `${user.name}`,
+				private: 1
+			}).then((res) => {
+				Room.update(res.data.data._id, {
+					uid: user._id
+				}).then((res) => {
+					ctrl.change('Conversations');
+				}, Utils.handleError);
+			}, (err) => {
+				ctrl.change('Conversations');
+			});
+		}
+	};
+
 	this.o2o = () => {
 		if (ctrl.tab === 'Users') {
 			ctrl.fetchUsers();

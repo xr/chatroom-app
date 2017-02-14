@@ -3,7 +3,8 @@ const panelListItem = {
   bindings: {
   	item: '<',
   	tab: '<',
-  	onSelect: '&'
+  	onSelect: '&',
+  	onCreate: '&'
   }
 };
 

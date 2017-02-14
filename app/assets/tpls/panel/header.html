@@ -14,7 +14,7 @@
     <a class="opts float-right" ng-if="!$root.user" href="{{$root.config.api}}/auth/facebook">
         <i class="fa fa-facebook-official" aria-hidden="true"></i>
     </a>
-    <a class="opts float-right" ng-if="$root.user">
+    <a class="opts float-right" ng-if="$root.user" href="{{$root.config.api}}/logout">
         <i class="fa fa-sign-out" aria-hidden="true"></i>
     </a>
 </div>

@@ -8,6 +8,6 @@
 	<div class="list">
 		<spinner ng-if="$ctrl.loading"></spinner>
 		<!-- TODO: need to except the users case -->
-		<panel-list-item ng-repeat="item in $ctrl.collections" item="item" tab="$ctrl.tab" on-select="$ctrl.select(roomId)"></panel-list-item>
+		<panel-list-item ng-repeat="item in $ctrl.collections" item="item" tab="$ctrl.tab" on-select="$ctrl.select(roomId)" on-create="$ctrl.create(user)"></panel-list-item>
 	</div>
 </div>
