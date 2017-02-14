@@ -5,7 +5,7 @@
 	<div class="welcome-room" ng-if="$root.user && !$ctrl.room._id">
 		This is the welcome room, please choose a chat room from left panel and start chatting! 😄
 	</div>
-	<a class="facebook-login" ng-if="!$root.user" href="{{$root.config.api}}/auth/facebook">
+	<a class="facebook-login" ng-if="!$root.user" target="_self" href="{{$root.config.api}}/auth/facebook">
 		<i class="fa fa-facebook" aria-hidden="true"></i>
 		<span>Login with Facebook</span>
 	</a>
