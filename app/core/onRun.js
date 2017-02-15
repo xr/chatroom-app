@@ -16,7 +16,6 @@ const onRun = ['User', '$rootScope', 'config', (User, $rootScope, config) => {
           $rootScope.$emit('ws', data);
         });
 	}, (err) => {
-		console.log('err', err);
 		$rootScope.loading = false;
 	});
 }];

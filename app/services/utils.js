@@ -3,9 +3,10 @@ const Utils = [() => {
 	const service = {};
 
 	service.handleError = function (err) {
-		console.error(err);
 		if (err.status === 401) {
 			alert('you need to login first, thanks.');
+		} else if (err.status === 403) {
+			alert('you do not have the right to do so.');
 		}
 	};
 

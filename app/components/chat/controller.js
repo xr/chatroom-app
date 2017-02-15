@@ -1,22 +1,13 @@
-const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', '$rootScope', function (Utils, Message, Room, $interval, moment, $rootScope) {
+const chatCtrl = ['Utils', 'Message', 'Room', '$interval', '$rootScope', function (Utils, Message, Room, $interval, $rootScope) {
 	const ctrl = this;
 
-	this.messages = [{
-		content: 'Welcome, I\'m Robot.C, here are the few tips:',
-		from: {
-			_id: '001',
-			avatar: 'http://ob0btlsu6.bkt.clouddn.com/chat-bot.png',
-			name: 'Robot.C'
-		},
-		created: moment().format()
-	}];
-
-	this.room = {
-		title: 'Welcome'
-	};
+	this.messages = [Message.onboarding.shift()];
 	this.page = 1;
 	this.intervalId = null;
 	this.noMsgs = false;
+	this.room = {
+		title: 'Welcome'
+	};
 
 	this.$onInit = () => {
 		Utils.onScrollTop(20, ctrl.fetchMessages);
@@ -118,57 +109,18 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', 'moment', '$rootScope
 		}, Utils.handleError);
 	};
 
-
-
+	this.join = (uid) => {
+		Room.update(this.room._id, {
+			uid: uid
+		}).then(() => {
+			ctrl.fetchRoom(ctrl.room._id);
+		}, Utils.handleError);
+	};
 
 	// welcome messages
-	const welcomeMsgs = [{
-		content: 'You need to login with facebook before you can chat with others. (Sorry!)',
-		from: {
-			_id: '001',
-			avatar: 'http://ob0btlsu6.bkt.clouddn.com/chat-bot.png',
-			name: 'Robot.C'
-		},
-		created: moment().format()
-	}, {
-		content: 'There are three tabs in the left panel, they are public rooms, conversations and all users',
-		from: {
-			_id: '001',
-			avatar: 'http://ob0btlsu6.bkt.clouddn.com/chat-bot.png',
-			name: 'Robot.C'
-		},
-		created: moment().format()
-	}, {
-		content: `You can view each public room and there will have a JOIN button in the top right corner of the chat window, which 
-		you can join if you like`,
-		from: {
-			_id: '001',
-			avatar: 'http://ob0btlsu6.bkt.clouddn.com/chat-bot.png',
-			name: 'Robot.C'
-		},
-		created: moment().format()
-	}, {
-		content: `Of course, you can also create you new room, if you are the owner of the room, there will be a "Edit" button 
-		in the top right corner of the chat window.`,
-		from: {
-			_id: '001',
-			avatar: 'http://ob0btlsu6.bkt.clouddn.com/chat-bot.png',
-			name: 'Robot.C'
-		},
-		created: moment().format()
-	}, {
-		content: `That's it, thank you again!`,
-		from: {
-			_id: '001',
-			avatar: 'http://ob0btlsu6.bkt.clouddn.com/chat-bot.png',
-			name: 'Robot.C'
-		},
-		created: moment().format()
-	}];
-
 	this.intervalId = $interval(function () {
-		if (welcomeMsgs.length) {
-			ctrl.messages.push(welcomeMsgs.shift());
+		if (Message.onboarding.length) {
+			ctrl.messages.push(Message.onboarding.shift());
 		} else {
 			$interval.cancel(ctrl.intervalId);
 		}

@@ -12,7 +12,9 @@ const panelCtrl = ['Room', 'User', 'Utils', '$rootScope', function (Room, User, 
 
 	this.$onInit = () => {
 		this[`fetch${this.tab}`]();
-		window.socket.on('o2o', ctrl.o2o);
+		if (window.socket) {
+			window.socket.on('o2o', ctrl.o2o);
+		}
 		$rootScope.$on('updateConversation', ctrl.onConversation);
 	};
 
@@ -21,20 +23,24 @@ const panelCtrl = ['Room', 'User', 'Utils', '$rootScope', function (Room, User, 
 	};
 
 	this.create = (user) => {
-		if (user._id !== $rootScope.user._id) {
-			Room.create({
-				title: user.fbid,
-				desc: `${user.name}`,
-				private: 1
-			}).then((res) => {
-				Room.update(res.data.data._id, {
-					uid: user._id
+		if ($rootScope.user) {
+			if (user._id !== $rootScope.user._id) {
+				Room.create({
+					title: user.fbid,
+					desc: `${user.name}`,
+					private: 1
 				}).then((res) => {
+					Room.update(res.data.data._id, {
+						uid: user._id
+					}).then((res) => {
+						ctrl.change('Conversations');
+					}, Utils.handleError);
+				}, (err) => {
 					ctrl.change('Conversations');
-				}, Utils.handleError);
-			}, (err) => {
-				ctrl.change('Conversations');
-			});
+				});
+			}
+		} else {
+			alert('you need to login to create conversation with the user.');
 		}
 	};
 

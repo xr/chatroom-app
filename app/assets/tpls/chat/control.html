@@ -22,6 +22,6 @@
 		</form>
 	</div>
 </div>
-<div class="right-button join-room" ng-if="!$ctrl.isMember($root.user._id)">
+<div class="right-button join-room" ng-if="!$ctrl.isMember($root.user._id)" ng-click="$ctrl.join($root.user._id)">
 	Join
 </div>
