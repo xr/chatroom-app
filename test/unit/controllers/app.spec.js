@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: panelCtrl', function () {
+describe('Controller: appCtrl', function () {
   beforeEach(angular.mock.module('chatApp'));
   let $ctrl;
   let controller;
