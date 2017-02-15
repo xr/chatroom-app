@@ -2,7 +2,6 @@ import app from '../components/app';
 
 import panel from '../components/panel';
 import panelHeader from '../components/panel/header';
-import panelSearch from '../components/panel/search';
 import panelTab from '../components/panel/tab';
 import panelListItem from '../components/panel/listItem';
 import createRoom from '../components/panel/createRoom';
@@ -19,7 +18,6 @@ const components = {
 
 	panel: panel,
 	panelHeader: panelHeader,
-	panelSearch: panelSearch,
 	panelTab: panelTab,
 	panelListItem: panelListItem,
 	createRoom: createRoom,
