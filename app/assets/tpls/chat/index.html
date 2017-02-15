@@ -7,7 +7,7 @@
 		<h1 ng-if="$ctrl.room.private">{{$ctrl.room.desc}}</h1>
 		<span class="desc" ng-if="!$ctrl.room.private">{{$ctrl.room.desc}}</span>
 		<span class="desc" ng-if="$ctrl.room.private">private</span>
-		<control room="$ctrl.room" on-update="$ctrl.updateRoom(room)" ng-if="$ctrl.room.title !== 'Welcome'"></control>
+		<control room="$ctrl.room" on-update="$ctrl.updateRoom(room)" on-join="$ctrl(uid)" ng-if="$ctrl.room.title !== 'Welcome'"></control>
 	</div>
 	<div class="content" id="chatWindow">
 		<spinner color="black" ng-if="$ctrl.loading"></spinner>

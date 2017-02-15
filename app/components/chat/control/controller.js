@@ -11,7 +11,9 @@ const controlCtrl = [function () {
 		});
 	};
 
-
+	this.onJoin = (uid) => {
+		this.join({ uid: uid });
+	};
 }];
 
 export default controlCtrl;

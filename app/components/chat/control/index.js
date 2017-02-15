@@ -2,7 +2,8 @@ const control = {
   templateUrl: '/assets/tpls/chat/control.html',
   bindings: {
   	room: '<',
-  	onUpdate: '&'
+  	onUpdate: '&',
+  	onJoin: '&'
   },
   controller: 'controlCtrl'
 };
