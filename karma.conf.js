@@ -20,7 +20,7 @@ module.exports = function(config) {
 			]
 		},
 		urlRoot: '/__karma__/',
-		singleRun: true,
+		singleRun: false,
 		colors: true
 	});
 };

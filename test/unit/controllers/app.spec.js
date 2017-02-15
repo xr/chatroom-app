@@ -14,4 +14,14 @@ describe('Controller: panelCtrl', function () {
   it('should be defined', function () {
     expect(controller).toBeDefined();
   });
+
+  it('should initialize a roomId to be null', function () {
+    expect(controller.roomId).toBeNull();
+  });
+
+  it('should set the roomId correctly', function () {
+    spyOn(controller, 'onSelect').and.callThrough();
+    controller.onSelect('test');
+    expect(controller.roomId).toEqual('test');
+  });
 });
