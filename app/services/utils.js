@@ -6,7 +6,7 @@ const Utils = [() => {
 		if (err.status === 401) {
 			alert('you need to login first, thanks.');
 		} else if (err.status === 403) {
-			alert('you do not have the right to do so.');
+			alert('you need to join the room (top right) first before you can post.');
 		}
 	};
 
