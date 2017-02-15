@@ -25,6 +25,7 @@ describe('Controller: panelCtrl', function () {
     spyOn(controller, 'fetchRooms');
   
     expect(controller.tab).toBe('Rooms');
+    expect(controller.rsPanelOpened).toBeFalsy();
     expect(controller.collections.length).toBe(0);
     controller.$onInit();
     expect(controller.fetchRooms).toHaveBeenCalled();

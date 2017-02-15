@@ -4,6 +4,7 @@ const panelCtrl = ['Room', 'User', 'Utils', '$rootScope', function (Room, User, 
 	this.tab = 'Rooms';
 	this.collections = [];
 	this.highlight = null;
+	this.rsPanelOpened = false;
 	this.pagination = {
 		'Rooms': 1,
 		'Conversations': 1,
@@ -19,6 +20,7 @@ const panelCtrl = ['Room', 'User', 'Utils', '$rootScope', function (Room, User, 
 	};
 
 	this.select = (roomId) => {
+		this.rsPanelOpened = false;
 		this.onSelect({ roomId: roomId });
 	};
 

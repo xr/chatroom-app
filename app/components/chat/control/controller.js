@@ -11,8 +11,8 @@ const controlCtrl = [function () {
 		});
 	};
 
-	this.onJoin = (uid) => {
-		this.join({ uid: uid });
+	this.join = (uid) => {
+		this.onJoin({ uid: uid });
 	};
 }];
 
