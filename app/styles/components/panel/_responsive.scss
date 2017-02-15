@@ -1,3 +1,6 @@
 .panel {
 	transform: translateX(- $panel-width);
+	.toggle {
+		display: block !important;
+	}
 }

@@ -4,6 +4,7 @@ import 'moment';
 import 'angular-moment';
 import 'angular-marked';
 import 'angular-sanitize';
+import 'angular-touch';
 
 import config from './core/config';
 import onConfig from './core/onConfig';
@@ -20,7 +21,8 @@ const requires = [
 	'ui.router',
 	'angularMoment',
 	'hc.marked',
-	'ngSanitize'
+	'ngSanitize',
+	'ngTouch'
 ];
 
 const ingredients = {

@@ -88,6 +88,10 @@ angular-sanitize@^1.6.2:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.6.2.tgz#8a327c1acb2c14f50da5b5cad5ea452750a1a375"
 
+angular-touch@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/angular-touch/-/angular-touch-1.6.2.tgz#51f58b841921a088f2be24b6057a3fca1d594452"
+
 angular-ui-router@^0.3.1:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/angular-ui-router/-/angular-ui-router-0.3.2.tgz#c27e0496309c99218d5655985b164a096ab520a9"
