@@ -25,7 +25,7 @@ const Message = ['$http', 'config', 'moment', ($http, config, moment) => {
 			created: moment().format()
 		},
 		{
-			content: 'You need to login with facebook before you can chat with others. (Sorry!)',
+			content: 'Click "login as guest" below to start exploring',
 			from: {
 				_id: '001',
 				avatar: avatar,
@@ -33,7 +33,7 @@ const Message = ['$http', 'config', 'moment', ($http, config, moment) => {
 			},
 			created: moment().format()
 		}, {
-			content: 'There are three tabs in the left panel, they are public rooms, conversations and all users',
+			content: 'There are three tabs in the left panel, they are "public rooms", "personal conversations" and "users list"',
 			from: {
 				_id: '001',
 				avatar: avatar,
@@ -41,8 +41,7 @@ const Message = ['$http', 'config', 'moment', ($http, config, moment) => {
 			},
 			created: moment().format()
 		}, {
-			content: `You can view each public room and there will have a JOIN button in the top right corner of the chat window, which 
-			you can join if you like`,
+			content: `You can browse public room by clicking the room, however, please click the "JOIN" button on the top right corner from each room if you want to discuss.`,
 			from: {
 				_id: '001',
 				avatar: avatar,
@@ -50,8 +49,7 @@ const Message = ['$http', 'config', 'moment', ($http, config, moment) => {
 			},
 			created: moment().format()
 		}, {
-			content: `Of course, you can also create you new room, if you are the owner of the room, there will be a "Edit" button 
-			in the top right corner of the chat window.`,
+			content: `Of course, you can create you new room, then you become the owner of the room, you will have the right to "Edit" your room.`,
 			from: {
 				_id: '001',
 				avatar: avatar,
@@ -59,7 +57,15 @@ const Message = ['$http', 'config', 'moment', ($http, config, moment) => {
 			},
 			created: moment().format()
 		}, {
-			content: `That's it, thank you again!`,
+			content: `Last but not least, private chatting is supported as well, pick one of the users and "double-click" to start chatting, you will get notified by a "beep" sound when you have new messages.`,
+			from: {
+				_id: '001',
+				avatar: avatar,
+				name: 'Robot.C'
+			},
+			created: moment().format()
+		}, {
+			content: `That's it, enjoy!`,
 			from: {
 				_id: '001',
 				avatar: avatar,

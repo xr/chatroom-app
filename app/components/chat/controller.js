@@ -124,7 +124,7 @@ const chatCtrl = ['Utils', 'Message', 'Room', '$interval', '$rootScope', functio
 		} else {
 			$interval.cancel(ctrl.intervalId);
 		}
-	}, 5000);
+	}, 2000);
 
 }];
 
