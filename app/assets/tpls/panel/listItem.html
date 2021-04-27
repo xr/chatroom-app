@@ -20,7 +20,8 @@
 
 <div class="item clearfix" ng-if="$ctrl.tab === 'Users' " ng-click="$ctrl.onCreate({ user: $ctrl.item });">
 	<span class="online dot-green" ng-if="$ctrl.item.online"></span>
-	<img class="avatar float-left" ng-src="{{$ctrl.item.fbid | avatar}}">
+	<img class="avatar float-left" ng-if="$ctrl.item.avatar" ng-src="{{$ctrl.item.avatar}}">
+	<img class="avatar float-left" ng-if="!$ctrl.item.avatar" ng-src="{{$ctrl.item.fbid | avatar}}">
 	<span class="name">{{$ctrl.item.name}}</span>
 	<span class="label-alert float-right">
 		<i class="fa fa-commenting" aria-hidden="true"></i>
